@@ -21,13 +21,13 @@ const initialMembers = [
 
 export function MembersTable() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [tierFilter, setTierFilter] = useState("");
-  const [pointsSort, setPointsSort] = useState("");
+  const [tierFilter, setTierFilter] = useState("all");
+  const [pointsSort, setPointsSort] = useState("default");
 
   const filteredMembers = initialMembers
     .filter((member) => 
       member.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (tierFilter ? member.tier === tierFilter : true)
+      (tierFilter === "all" ? true : member.tier === tierFilter)
     )
     .sort((a, b) => {
       if (pointsSort === "asc") return a.points - b.points;
@@ -53,7 +53,7 @@ export function MembersTable() {
               <SelectValue placeholder="Filter by Tier" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Tiers</SelectItem>
+              <SelectItem value="all">All Tiers</SelectItem>
               <SelectItem value="Bronze">Bronze</SelectItem>
               <SelectItem value="Silver">Silver</SelectItem>
               <SelectItem value="Gold">Gold</SelectItem>
@@ -65,7 +65,7 @@ export function MembersTable() {
               <SelectValue placeholder="Sort by Points" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Default</SelectItem>
+              <SelectItem value="default">Default Order</SelectItem>
               <SelectItem value="asc">Points: Low to High</SelectItem>
               <SelectItem value="desc">Points: High to Low</SelectItem>
             </SelectContent>
