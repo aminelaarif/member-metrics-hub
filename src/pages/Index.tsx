@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MetricCard } from "@/components/MetricCard";
 import { MembersTable } from "@/components/MembersTable";
+import { ReferralProgram } from "@/components/ReferralProgram";
 import { Plus } from "lucide-react";
 
 const Index = () => {
@@ -37,9 +38,15 @@ const Index = () => {
         />
       </div>
 
-      <div className="bg-white rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-6">Members</h2>
-        <MembersTable />
+      <div className="space-y-8">
+        <div className="bg-white rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-6">Members</h2>
+          <MembersTable />
+        </div>
+
+        <div className="bg-white rounded-lg p-6">
+          <ReferralProgram />
+        </div>
       </div>
     </div>
   );
