@@ -49,10 +49,10 @@ export function MembersTable() {
         </div>
         <div className="flex gap-2">
           <Select value={tierFilter} onValueChange={setTierFilter}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] bg-white">
               <SelectValue placeholder="Filter by Tier" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               <SelectItem value="all">All Tiers</SelectItem>
               <SelectItem value="Bronze">Bronze</SelectItem>
               <SelectItem value="Silver">Silver</SelectItem>
@@ -61,10 +61,10 @@ export function MembersTable() {
             </SelectContent>
           </Select>
           <Select value={pointsSort} onValueChange={setPointsSort}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] bg-white">
               <SelectValue placeholder="Sort by Points" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               <SelectItem value="default">Default Order</SelectItem>
               <SelectItem value="asc">Points: Low to High</SelectItem>
               <SelectItem value="desc">Points: High to Low</SelectItem>

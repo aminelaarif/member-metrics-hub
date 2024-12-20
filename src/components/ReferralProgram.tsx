@@ -14,7 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export function ReferralProgram() {
   const { toast } = useToast();
-  const referralLink = "https://example.com/refer/USER123"; // This would normally come from your backend
+  const referralLink = "https://example.com/refer/USER123";
 
   const copyToClipboard = async () => {
     try {
@@ -49,9 +49,9 @@ export function ReferralProgram() {
             </p>
             <Dialog>
               <DialogTrigger asChild>
-                <Button className="w-full">Share Invite Link</Button>
+                <Button className="w-full bg-blue-500 hover:bg-blue-600">Share Invite Link</Button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className="bg-white">
                 <DialogHeader>
                   <DialogTitle>Share Your Referral Link</DialogTitle>
                   <DialogDescription>
@@ -60,7 +60,7 @@ export function ReferralProgram() {
                 </DialogHeader>
                 <div className="flex gap-2 mt-4">
                   <Input value={referralLink} readOnly />
-                  <Button onClick={copyToClipboard}>Copy</Button>
+                  <Button onClick={copyToClipboard} className="bg-blue-500 hover:bg-blue-600">Copy</Button>
                 </div>
               </DialogContent>
             </Dialog>
@@ -80,9 +80,9 @@ export function ReferralProgram() {
             </p>
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full">View Network</Button>
+                <Button variant="outline" className="w-full border-blue-500 text-blue-500 hover:bg-blue-50">View Network</Button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className="bg-white">
                 <DialogHeader>
                   <DialogTitle>Your Referral Network</DialogTitle>
                   <DialogDescription>
@@ -122,9 +122,9 @@ export function ReferralProgram() {
             </p>
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full">View Milestones</Button>
+                <Button variant="outline" className="w-full border-blue-500 text-blue-500 hover:bg-blue-50">View Milestones</Button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className="bg-white">
                 <DialogHeader>
                   <DialogTitle>Milestone Rewards</DialogTitle>
                   <DialogDescription>
